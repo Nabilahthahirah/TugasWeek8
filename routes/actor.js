@@ -4,10 +4,10 @@ const pool = require("../config/config.js");
 
 router.get("/", (req, res) => {
   const query = `
-        SELECT
-        *
-        FROM film;
-    `;
+          SELECT
+          *
+          FROM actor;
+      `;
 
   pool.query(query, (err, result) => {
     if (err) {
@@ -19,17 +19,17 @@ router.get("/", (req, res) => {
   });
 });
 
-router.get("/:film_id", (req, res) => {
-  const { film_id } = req.params;
+router.get("/:actor_id", (req, res) => {
+  const { actor_id } = req.params;
 
   const query = `
-        SELECT
-        *
-        FROM film
-        WHERE film_id = $1;
-    `;
+          SELECT
+          *
+          FROM actor
+          WHERE actor_id = $1;
+      `;
 
-  pool.query(query, [film_id], (err, result) => {
+  pool.query(query, [actor_id], (err, result) => {
     if (err) {
       console.error(err);
       res.status(500).json({ error: "Internal Server Error" });
@@ -41,6 +41,5 @@ router.get("/:film_id", (req, res) => {
     }
   });
 });
-
 
 module.exports = router;
