@@ -8,9 +8,20 @@ pembuatan aplikasi backend
 Buatlah sebuah aplikasi Express JS yang dapat menampilkan data text pada halaman web 
 yang didapatkan dari sampel data [ini](https://github.com/fathy17/rakamin-expressjs/blob/master/dvdrental.tar).
 
-Soal 1: Lakukan seeding untuk menambahkan 5 data baru pada data table actor yang 
-disediakan
+## Soal dari Homework
+* [Soal 1](#Soal-1)
+* [Soal 2](#Soal-2)
+* [Soal 3](#Soal-3)
 
+## Setup
+To run this project, install it locally using npm:
+```
+$ npm install express
+$ npm install --save pg
+```
+
+#Soal-1: Lakukan seeding untuk menambahkan 5 data baru pada data table actor yang disediakan
+```
 INSERT INTO actor (actor_id, first_name, last_name, last_update)
 VALUES
     (201, 'Nabilah', 'Thahirah', '2023-09-26 15:30:00'),
@@ -18,8 +29,13 @@ VALUES
     (203, 'Siti', 'Wahida', '2023-09-26 17:15:00'),
     (204, 'Muhammad', 'Iqbal', '2023-09-26 18:20:00'),
     (205, 'Lina', 'Sari', '2023-09-26 19:00:00');
+```
+Untuk menjalankan queery seed yang telah dibuat. jalankan
+```
+npm run seed
+```
 
-Soal 2 : Buatlah query untuk menampilkan data pada database sebagai berikut.
+#Soal-2 : Buatlah query untuk menampilkan data pada database sebagai berikut.
 1. Menampilkan data seluruh list film
    Membuka localhost:3000/film
    
@@ -32,9 +48,11 @@ Soal 2 : Buatlah query untuk menampilkan data pada database sebagai berikut.
 7. Menampilkan data list film berdasarkan category
 Implementasikan routing yang sesuai dan benar pada aplikasi yang teman-teman buat.
 
-Soal 3: Lakukan migrasi database dengan menambahkan column age pada tabel actor yang 
+#Soal-3: Lakukan migrasi database dengan menambahkan column age pada tabel actor yang 
 tersedia
-
+```
 ALTER TABLE actor
 ADD COLUMN age int;
+```
+
 
